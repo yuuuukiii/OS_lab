@@ -1,0 +1,14 @@
+1.compiler toolchain
+	1.objdump -i
+		elf32-i386
+	2.gcc -m32 -print-libgcc-file-name
+		/usr/lib/gcc/x86_64-linux-gnu/5/32/libgcc.a
+2.install QEMU Emulator
+	1.install packages:libsdl1.2-dev, libtool-bin, libglib2.0-dev, libz-dev, and libpixman-1-dev
+		command:sudo apt-get install xxx
+	2.clone QEMU git repository
+		command:git clone http://web.mit.edu/ccutler/www/qemu.git -b 6.828-2.3.0
+	3.configure the source code
+		command:./configure --disable-kvm --target-list="i386-softmmu x86_64-softmmu"
+	4.sudo make && sudo make install
+	
